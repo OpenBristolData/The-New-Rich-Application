@@ -399,7 +399,7 @@
       </div>
     </section>
 
-    <!-- Application Form -->
+   <!-- Application Form -->
 <section id="form" class="py-16 md:py-20 bg-white">
   <div class="max-w-3xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-extrabold text-center">
@@ -438,7 +438,29 @@
             </div>
           </div>
 
-          <div>
+               <!-- NEW FIELD: Are you currently working? -->
+  <div>
+    <label
+      for="employment"
+      class="block text-sm font-semibold mb-2"
+      >Are you currently working?</label
+    >
+    <select
+      id="employment"
+      name="employment"
+      required
+      class="w-full rounded-xl border border-burgundy-200 focus:border-burgundy-500 focus:ring-2 focus:ring-burgundy-200/70 px-4 py-3 outline-none transition"
+    >
+      <option value="">Select an option</option>
+      <option value="Full time">Full time</option>
+      <option value="Part time">Part time</option>
+      <option value="Casual">Casual</option>
+      <option value="Not working">Not working</option>
+    </select>
+  </div>
+        </div>
+
+           <div class="mt-5">
             <label
               for="contactMethod"
               class="block text-sm font-semibold mb-2"
@@ -455,9 +477,6 @@
               <option>Text</option>
             </select>
           </div>
-        </div>
-
-       
               <!-- Row 2 -->
               <div class="mt-5">
                 <label
@@ -472,7 +491,7 @@
                     type="text"
                     required
                     class="w-full rounded-xl border border-burgundy-200 focus:border-burgundy-500 focus:ring-2 focus:ring-burgundy-200/70 px-4 py-3 outline-none transition"
-                    placeholder="@handle • you@example.com • +94 ..."
+                    placeholder="@handle • you@example.com •"
                   />
                   <i
                     class="fa-regular fa-address-card absolute right-3 top-1/2 -translate-y-1/2 text-burgundy-400"
@@ -659,8 +678,6 @@
     </div>
   </div>
 </section>
-
-
     <!-- Footer -->
     <footer class="bg-burgundy-900 text-white">
       <div class="max-w-7xl mx-auto px-4 py-5">
@@ -758,4 +775,5 @@
     </script>
   </body>
 </html>
+
 
