@@ -22,7 +22,7 @@ if (!$data) $data = $_POST;
 function safe($v) { return htmlspecialchars(trim((string)($v ?? ''))); }
 
 $name = safe($data['name'] ?? '');
-
+$employment= safe($data['employment'] ?? '');
 $contactMethod = safe($data['contactMethod'] ?? '');
 $contactInfo = safe($data['contactInfo'] ?? '');
 $currentLife = nl2br(safe($data['currentLife'] ?? ''));
@@ -44,6 +44,10 @@ $html = "
   <tr style='background:#fff;'>
     <td style='padding:12px;border-bottom:1px solid #ddd;'>Name</td>
     <td style='padding:12px;border-bottom:1px solid #ddd;'>$name</td>
+  </tr>
+  <tr style='background:#fff;'>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>Employment</td>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>$employment</td>
   </tr>
   <tr style='background:#f7f7f7;'>
     <td style='padding:12px;border-bottom:1px solid #ddd;'>Contact Method</td>
@@ -114,6 +118,7 @@ try {
     http_response_code(500);
     echo json_encode(['ok' => false, 'error' => $mail->ErrorInfo]);
 }
+
 
 
 
