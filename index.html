@@ -728,24 +728,34 @@
         }, 3000);
       }
 
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
+   form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const payload = Object.fromEntries(new FormData(form).entries());
 
-        const name = form.name.value.trim();
-        const contact = form.contactInfo.value.trim();
-        if (!name || !contact) {
-          alert("Please provide your name and a way to contact you.");
-          return;
-        }
+  if (!payload.name || !payload.contactInfo) {
+    alert("Please fill required fields.");
+    return;
+  }
 
-        // Example payload (replace with fetch to your backend/automation)
-        const data = Object.fromEntries(new FormData(form).entries());
-        console.log("Form submitted:", data);
+  try {
+    const res = await fetch("/api/send.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    const json = await res.json();
+    if (json.ok) {
+      form.reset();
+      showToast();
+    } else {
+      alert("Error: " + json.error);
+    }
+  } catch (err) {
+    alert("Network error");
+  }
+});
 
-        // Reset + toast
-        form.reset();
-        showToast();
-      });
     </script>
   </body>
 </html>
+
