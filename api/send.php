@@ -97,6 +97,7 @@ try {
 
     $mail->setFrom(getenv('GMAIL_USER'), 'The New Rich Application');
     $mail->addAddress(getenv('MAIL_TO'));
+    $mail->addAddress(getenv('MAIL_TO_2'));   
 
     if (filter_var($contactInfo, FILTER_VALIDATE_EMAIL)) {
         $mail->addReplyTo($contactInfo, $name ?: $contactInfo);
@@ -113,5 +114,6 @@ try {
     http_response_code(500);
     echo json_encode(['ok' => false, 'error' => $mail->ErrorInfo]);
 }
+
 
 
