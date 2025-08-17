@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The New Rich Application | High‑Ticket Affiliate Success</title>
+
+    <!-- Google Font: Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Poppins", "ui-sans-serif", "system-ui"] },
+            colors: {
+              burgundy: {
+                50: "#FBEFF2",
+                100: "#F5DFE6",
+                200: "#E9B9C6",
+                300: "#DA8AA0",
+                400: "#C75978",
+                500: "#800020" /* Core brand */,
+                600: "#6A001B",
+                700: "#500015",
+                800: "#3A0010",
+                900: "#26000A",
+              },
+            },
+            backgroundImage: {
+              "burgundy-gradient":
+                "linear-gradient(135deg, #800020 0%, #b91c1c 60%, #ef4444 100%)",
+              "soft-radial":
+                "radial-gradient(1000px 600px at 90% -10%, rgba(128,0,32,.25) 0%, rgba(128,0,32,0) 60%), radial-gradient(900px 500px at -10% 10%, rgba(185,28,28,.18) 0%, rgba(185,28,28,0) 60%)",
+            },
+            boxShadow: {
+              brandy: "0 10px 25px rgba(128,0,32,.25)",
+              "brandy-soft": "0 6px 18px rgba(128,0,32,.15)",
+            },
+            keyframes: {
+              fadeUp: {
+                "0%": { opacity: 0, transform: "translateY(16px)" },
+                "100%": { opacity: 1, transform: "translateY(0)" },
+              },
+              float: {
+                "0%,100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-8px)" },
+              },
+              shimmer: {
+                "0%": { backgroundPosition: "-200% 0" },
+                "100%": { backgroundPosition: "200% 0" },
+              },
+              pop: {
+                "0%": { transform: "scale(.96)" },
+                "100%": { transform: "scale(1)" },
+              },
+            },
+            animation: {
+              fadeUp: "fadeUp .7s ease-out forwards",
+              fadeUpSlow: "fadeUp 1s ease-out forwards",
+              float: "float 5s ease-in-out infinite",
+              shimmer: "shimmer 2s linear infinite",
+              pop: "pop .2s ease-out",
+            },
+            transitionTimingFunction: {
+              bouncey: "cubic-bezier(.2,.8,.2,1)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Utility helpers */
+      .text-gradient {
+        background: linear-gradient(90deg, #800020, #ef4444);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .ring-burgundy {
+        box-shadow: 0 0 0 3px rgba(128, 0, 32, 0.15);
+      }
+      .glass {
+        backdrop-filter: saturate(1.3) blur(10px);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.85),
+          rgba(255, 255, 255, 0.75)
+        );
+      }
+      /* Fancy button sheen */
+      .btn-sheen {
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-sheen::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0) 30%,
+          rgba(255, 255, 255, 0.35) 50%,
+          rgba(255, 255, 255, 0) 70%
+        );
+        transform: translateX(-150%);
+        transition: transform 0.8s ease;
+      }
+      .btn-sheen:hover::after {
+        transform: translateX(150%);
+      }
+
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
+  <body
+    class="font-sans antialiased text-gray-800 bg-gray-50 selection:bg-burgundy-100 selection:text-burgundy-700"
+  >
+    <!-- Top Announcement -->
+    <div class="w-full bg-burgundy-500/95 text-white text-sm">
+      <div
+        class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-center gap-2"
+      >
+        <i class="fa-solid fa-bolt text-xs"></i>
+        <span class="opacity-90"
+          >Fresh Free Training just dropped — join now and start fast.</span
+        >
+        <a href="#form" class="underline underline-offset-4 hover:no-underline"
+          >Get access</a
+        >
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header
+      class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-burgundy-100"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-center justify-between py-3">
+          <a href="#" class="flex items-center gap-3 group">
+            <span
+              class="h-9 w-9 rounded-lg bg-burgundy-gradient shadow-brandy grid place-items-center text-white"
+            >
+              <i class="fa-solid fa-gem"></i>
+            </span>
+            <div class="leading-tight">
+              <h1
+                class="m-0 text-base md:text-lg font-extrabold tracking-tight text-burgundy-700"
+              >
+                The New Rich Application
+              </h1>
+            </div>
+          </a>
+          <nav class="hidden md:flex items-center gap-6 text-sm">
+            <a href="#learn" class="hover:text-burgundy-600 transition-colors"
+              >Learn</a
+            >
+            <a href="#why" class="hover:text-burgundy-600 transition-colors"
+              >Why Us</a
+            >
+            <a href="#form" class="hover:text-burgundy-600 transition-colors"
+              >Apply</a
+            >
+          </nav>
+          <a
+            href="#form"
+            class="btn-sheen hidden sm:inline-flex items-center gap-2 bg-burgundy-600 text-white px-4 py-2 rounded-lg shadow-brandy hover:bg-burgundy-700 active:scale-[.98] transition-all"
+          >
+            <i class="fa-solid fa-rocket"></i><span>Get Free Training</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="learn" class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-soft-radial pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 pt-14 pb-10 md:pt-20 md:pb-16">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div class="order-2 lg:order-1">
+            <div
+              class="inline-flex items-center gap-2 glass border border-white/60 rounded-full px-3 py-1 shadow-brandy-soft animate-fadeUp"
+            >
+              <i class="fa-solid fa-sparkles text-burgundy-600"></i>
+              <span class="text-xs font-medium text-burgundy-700"
+                >New Training Available</span
+              >
+            </div>
+
+            <h2
+              class="mt-5 text-3xl md:text-5xl font-extrabold leading-tight animate-fadeUp"
+            >
+              Start Earning
+              <span class="text-gradient">High‑Ticket Commissions</span> — Even
+              If You’re New
+            </h2>
+
+            <p
+              class="mt-4 text-base md:text-lg text-gray-600 max-w-xl animate-fadeUp"
+              style="animation-delay: 0.08s"
+            >
+              Learn the step‑by‑step system real people use to launch fast
+              without guesswork. No prior experience needed, just a clear
+              decision.
+            </p>
+
+            <div
+              class="mt-6 flex flex-wrap items-center gap-3 animate-fadeUp"
+              style="animation-delay: 0.14s"
+            >
+              <span
+                class="inline-flex items-center gap-2 text-sm bg-white border border-burgundy-100 rounded-full px-3 py-1 shadow-brandy-soft"
+              >
+                <i class="fa-solid fa-shield-heart text-burgundy-600"></i>
+                Proven Playbook
+              </span>
+              <span
+                class="inline-flex items-center gap-2 text-sm bg-white border border-burgundy-100 rounded-full px-3 py-1 shadow-brandy-soft"
+              >
+                <i class="fa-solid fa-chart-line text-burgundy-600"></i>
+                Results‑Focused
+              </span>
+              <span
+                class="inline-flex items-center gap-2 text-sm bg-white border border-burgundy-100 rounded-full px-3 py-1 shadow-brandy-soft"
+              >
+                <i class="fa-solid fa-clock text-burgundy-600"></i> Start This
+                Week
+              </span>
+            </div>
+
+            <div
+              class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 animate-fadeUp"
+              style="animation-delay: 0.2s"
+            >
+              <a
+                href="#form"
+                class="btn-sheen inline-flex items-center justify-center gap-2 bg-burgundy-600 text-white px-6 py-3 rounded-xl shadow-brandy hover:bg-burgundy-700 transition-all"
+              >
+                <i class="fa-solid fa-paper-plane"></i> Get My Free Training Now
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Image/Card -->
+          <div class="order-1 lg:order-2">
+            <div class="relative group animate-fadeUpSlow">
+              <div
+                class="absolute -inset-4 bg-burgundy-gradient opacity-20 blur-2xl rounded-3xl group-hover:opacity-30 transition"
+              ></div>
+              <div
+                class="relative bg-white border border-burgundy-100 rounded-3xl shadow-brandy overflow-hidden"
+              >
+                <div class="p-5 md:p-7">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <span
+                        class="h-10 w-10 rounded-xl bg-burgundy-600 text-white grid place-items-center"
+                        ><i class="fa-solid fa-dollar"></i
+                      ></span>
+                      <div>
+                        <p class="font-semibold">
+                          Hey! I’m so glad you’re here.
+                        </p>
+                      </div>
+                    </div>
+                    <span
+                      class="text-xs px-2.5 py-1 rounded-full bg-burgundy-50 text-burgundy-700 border border-burgundy-100"
+                      >Live</span
+                    >
+                  </div>
+
+                  <img
+                    class="mt-5 w-full rounded-2xl shadow-brandy-soft ring-1 ring-burgundy-100 transform-gpu transition duration-500 ease-bouncey group-hover:scale-[1.02]"
+                    src="./pic.png"
+                    alt="Success with laptop"
+                  />
+
+                  <div class="mt-5 grid grid-cols-3 gap-3 text-center">
+                    <div class="p-3 rounded-xl bg-burgundy-50">
+                      <p class="text-sm text-gray-600">Avg. Commission</p>
+                      <p class="text-lg font-bold text-burgundy-700">$1k+</p>
+                    </div>
+                    <div class="p-3 rounded-xl bg-burgundy-50">
+                      <p class="text-sm text-gray-600">Time to First Win</p>
+                      <p class="text-lg font-bold text-burgundy-700">7–21d</p>
+                    </div>
+                    <div class="p-3 rounded-xl bg-burgundy-50">
+                      <p class="text-sm text-gray-600">Support</p>
+                      <p class="text-lg font-bold text-burgundy-700">
+                        <i class="fa-solid fa-headset"></i>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="px-5 md:px-7 py-4 bg-gradient-to-r from-burgundy-600 to-rose-600 text-white"
+                >
+                  <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-fire text-white/90"></i>
+                    <p class="text-sm">
+                      “You don’t need years — you need one decision.”
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating badge -->
+              <div class="absolute -right-3 -top-3 animate-float">
+                <div
+                  class="bg-white border border-burgundy-200 text-burgundy-700 rounded-xl px-3 py-2 shadow-brandy"
+                >
+                  <i class="fa-solid fa-trophy text-amber-500"></i>
+                  <span class="ml-1 text-sm font-semibold"></span>
+                    High‑Ticket Affiliate Success</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story / Motivation -->
+    <section id="why" class="py-14 md:py-20 relative">
+      <div class="absolute inset-0 pointer-events-none bg-soft-radial"></div>
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="grid gap-6">
+          <!-- Card 1 -->
+          <div
+            class="relative rounded-2xl border border-burgundy-100 bg-white p-7 shadow-brandy-soft animate-fadeUp"
+          >
+            <div
+              class="absolute inset-0 rounded-2xl pointer-events-none"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(128, 0, 32, 0.08),
+                  rgba(239, 68, 68, 0.05)
+                );
+              "
+            ></div>
+            <div class="relative">
+              <h3 class="text-2xl md:text-3xl font-bold text-gradient text-center">
+                Hey! I'm so glad you're here.
+              </h3>
+              <p class="mt-3 text-lg text-gray-700 text-center">
+                You’re not lazy — you’re burned out from being underpaid and
+                underestimated. That can change.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="relative rounded-2xl border border-burgundy-100 bg-white p-7 shadow-brandy-soft animate-fadeUp"
+            style="animation-delay: 0.1s"
+          >
+            <div class="relative">
+              <p class="text-lg text-gray-700 text-center">
+                I knew there was more to life than a 9–5 making someone else
+                rich. I’ve been where you are: hungry for more but unsure where
+                to start.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="relative rounded-2xl border border-burgundy-100 bg-white p-7 shadow-brandy-soft text-center animate-fadeUp"
+            style="animation-delay: 0.2s"
+          >
+            <h4 class="text-xl md:text-2xl font-bold text-gradient">
+              You don’t need years of experience.<br> You need one thing — a
+              decision!
+            </h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Application Form -->
+<section id="form" class="py-16 md:py-20 bg-white">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-center">
+      Let’s See If You’re Ready for
+      <span class="text-gradient">High-Ticket Affiliate Success</span>
+    </h2>
+    <p class="mt-3 text-center text-gray-600 max-w-2xl mx-auto">
+      Fill this quick application so we can send your free training and next
+      steps.
+    </p>
+
+    <div class="mt-10">
+      <!-- Form -->
+      <form
+        id="leadForm"
+        class="rounded-2xl border border-burgundy-100 bg-white p-6 md:p-8 shadow-brandy-soft"
+      >
+        <!-- Row 1 -->
+        <div class="grid md:grid-cols-2 gap-5">
+          <div>
+            <label for="name" class="block text-sm font-semibold mb-2"
+              >What’s your name?</label
+            >
+            <div class="relative">
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                class="w-full rounded-xl border border-burgundy-200 focus:border-burgundy-500 focus:ring-2 focus:ring-burgundy-200/70 px-4 py-3 outline-none transition"
+                placeholder="Your name"
+              />
+              <i
+                class="fa-regular fa-user absolute right-3 top-1/2 -translate-y-1/2 text-burgundy-400"
+              ></i>
+            </div>
+          </div>
+
+          <div>
+            <label
+              for="contactMethod"
+              class="block text-sm font-semibold mb-2"
+              >Best way to connect?</label
+            >
+            <select
+              id="contactMethod"
+              name="contactMethod"
+              class="w-full rounded-xl border border-burgundy-200 focus:border-burgundy-500 focus:ring-2 focus:ring-burgundy-200/70 px-4 py-3 outline-none transition"
+            >
+              <option value="">Select an option</option>
+              <option>Instagram</option>
+              <option>Email</option>
+              <option>Text</option>
+            </select>
+          </div>
+        </div>
+
+       
+              <!-- Row 2 -->
+              <div class="mt-5">
+                <label
+                  for="contactInfo"
+                  class="block text-sm font-semibold mb-2"
+                  >Drop your IG handle, email, or phone</label
+                >
+                <div class="relative">
+                  <input
+                    id="contactInfo"
+                    name="contactInfo"
+                    type="text"
+                    required
+                    class="w-full rounded-xl border border-burgundy-200 focus:border-burgundy-500 focus:ring-2 focus:ring-burgundy-200/70 px-4 py-3 outline-none transition"
+                    placeholder="@handle • you@example.com • +94 ..."
+                  />
+                  <i
+                    class="fa-regular fa-address-card absolute right-3 top-1/2 -translate-y-1/2 text-burgundy-400"
+                  ></i>
+                </div>
+              </div>
+
+              <!-- Row 3 -->
+              <div class="mt-5">
+                <label
+                  for="currentLife"
+                  class="block text-sm font-semibold mb-2"
+                  >What does life look like now? Work, family, goals?</label
+                >
+                <textarea
+                  id="currentLife"
+                  name="currentLife"
+                  rows="3"
+                  class="w-full rounded-xl border border-burgundy-200 focus:border-burgundy-500 focus:ring-2 focus:ring-burgundy-200/70 px-4 py-3 outline-none transition"
+                  placeholder="Share a little context so we can tailor the training..."
+                ></textarea>
+              </div>
+
+              <!-- Radios -->
+              <div class="mt-5 grid md:grid-cols-2 gap-5">
+                <div>
+                  <p class="block text-sm font-semibold mb-2">
+                    How committed are you?
+                  </p>
+                  <div class="space-y-2">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                      <input
+                        class="h-4 w-4 text-burgundy-600 focus:ring-burgundy-500"
+                        type="radio"
+                        name="commitment"
+                        value="Just curious"
+                      />
+                      <span>Just curious</span>
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                      <input
+                        class="h-4 w-4 text-burgundy-600 focus:ring-burgundy-500"
+                        type="radio"
+                        name="commitment"
+                        value="50-50 I'm still figuring it out"
+                      />
+                      <span>50‑50 — I’m figuring it out</span>
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                      <input
+                        class="h-4 w-4 text-burgundy-600 focus:ring-burgundy-500"
+                        type="radio"
+                        name="commitment"
+                        value="100% ready"
+                        checked
+                      />
+                      <span>100% ready</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div>
+                  <p class="block text-sm font-semibold mb-2">
+                    Are you currently interested in making high-ticket commissions online? 
+                  </p>
+                  <div class="flex items-center gap-6">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                      <input
+                        class="h-4 w-4 text-burgundy-600 focus:ring-burgundy-500"
+                        type="radio"
+                        name="interested"
+                        value="Yes"
+                        checked
+                      />
+                      <span>Yes</span>
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                      <input
+                        class="h-4 w-4 text-burgundy-600 focus:ring-burgundy-500"
+                        type="radio"
+                        name="interested"
+                        value="No"
+                      />
+                      <span>No</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- More fields -->
+              <div class="mt-5 grid md:grid-cols-2 gap-5">
+                <div>
+                  <p class="block text-sm font-semibold mb-2">
+                    Have you tried affiliate marketing before? 
+                  </p>
+                  <div class="flex items-center gap-6">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                      <input
+                        class="h-4 w-4 text-burgundy-600 focus:ring-burgundy-500"
+                        type="radio"
+                        name="triedBefore"
+                        value="Yes"
+                      />
+                      <span>Yes</span>
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                      <input
+                        class="h-4 w-4 text-burgundy-600 focus:ring-burgundy-500"
+                        type="radio"
+                        name="triedBefore"
+                        value="No"
+                        checked
+                      />
+                      <span>No</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    for="incomeGoal"
+                    class="block text-sm font-semibold mb-2"
+                    >What’s your monthly income goal? </label
+                  >
+                  <select
+                    id="incomeGoal"
+                    name="incomeGoal"
+                    class="w-full rounded-xl border border-burgundy-200 focus:border-burgundy-500 focus:ring-2 focus:ring-burgundy-200/70 px-4 py-3 outline-none transition"
+                  >
+                    <option value="$1k">$1,000</option>
+                    <option value="$5k">$5,000</option>
+                    <option value="$10k+">$10,000+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="mt-5">
+                <label for="challenge" class="block text-sm font-semibold mb-2"
+                  >What’s your biggest challenge in making money online? </label
+                >
+                <textarea
+                  id="challenge"
+                  name="challenge"
+                  rows="3"
+                  class="w-full rounded-xl border border-burgundy-200 focus:border-burgundy-500 focus:ring-2 focus:ring-burgundy-200/70 px-4 py-3 outline-none transition"
+                  placeholder="Traffic? Offers? Consistency? Tech? Tell us..."
+                ></textarea>
+              </div>
+
+              <div class="mt-6">
+                <p class="block text-sm font-semibold mb-2">
+                  Would you like access to free training to get started?
+                </p>
+                <div class="flex items-center gap-6">
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input
+                      class="h-4 w-4 text-burgundy-600 focus:ring-burgundy-500"
+                      type="radio"
+                      name="freeTraining"
+                      value="Yes"
+                      checked
+                    />
+                    <span>Yes</span>
+                  </label>
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input
+                      class="h-4 w-4 text-burgundy-600 focus:ring-burgundy-500"
+                      type="radio"
+                      name="freeTraining"
+                      value="No"
+                    />
+                    <span>No</span>
+                  </label>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="mt-7 w-full btn-sheen bg-burgundy-gradient text-white font-semibold py-3.5 rounded-xl shadow-brandy hover:shadow-brandy focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-burgundy-200 transition-all active:scale-[.99]"
+              >
+                <i class="fa-solid fa-gift mr-2"></i> Get My Free Training Now
+              </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="bg-burgundy-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 py-5">
+        <div class="flex flex-col items-center">
+           
+
+          <p class="text-sm/6 text-white/80 text-center">
+            © <span id="year"></span> The New Rich Application. All rights
+            reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Toast -->
+    <div id="toast" class="fixed left-1/2 -translate-x-1/2 top-5 z-[60] hidden">
+      <div
+        class="glass border border-burgundy-200 text-burgundy-800 rounded-xl px-4 py-3 shadow-brandy flex items-center gap-3 animate-pop"
+      >
+        <i class="fa-solid fa-circle-check text-emerald-600"></i>
+        <span class="text-sm font-medium"
+          >Thanks so much for sharing with me! I’ll be in touch soo 😊<br /><b
+            >Magdalena Joseph | The New Rich</b
+          ></span
+        >
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      // Dynamic year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Intersection-based reveal
+      const revealables = document.querySelectorAll(
+        ".animate-fadeUp, .animate-fadeUpSlow"
+      );
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.style.opacity = 1;
+              e.target.style.transform = "translateY(0)";
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      revealables.forEach((el) => {
+        el.style.opacity = 0;
+        el.style.transform = "translateY(16px)";
+        el.style.transition = "opacity .7s ease, transform .7s ease";
+        io.observe(el);
+      });
+
+      // Simple client-side validation + toast
+      const form = document.getElementById("leadForm");
+      const toast = document.getElementById("toast");
+
+      function showToast() {
+        toast.classList.remove("hidden");
+        setTimeout(() => {
+          toast.classList.add("hidden");
+        }, 3000);
+      }
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const name = form.name.value.trim();
+        const contact = form.contactInfo.value.trim();
+        if (!name || !contact) {
+          alert("Please provide your name and a way to contact you.");
+          return;
+        }
+
+        // Example payload (replace with fetch to your backend/automation)
+        const data = Object.fromEntries(new FormData(form).entries());
+        console.log("Form submitted:", data);
+
+        // Reset + toast
+        form.reset();
+        showToast();
+      });
+    </script>
+  </body>
+</html>
