@@ -6,10 +6,15 @@ header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { http_response_code(200); exit; }
 
-require __DIR__ . '/../vendor/autoload.php';
+// Require PHPMailer manually
+require __DIR__ . '/vendor/PHPMailer/src/PHPMailer.php';
+require __DIR__ . '/vendor/PHPMailer/src/SMTP.php';
+require __DIR__ . '/vendor/PHPMailer/src/Exception.php';
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+// Get form data
 $raw = file_get_contents('php://input');
 $data = json_decode($raw, true);
 if (!$data) $data = $_POST;
@@ -17,6 +22,7 @@ if (!$data) $data = $_POST;
 function safe($v) { return htmlspecialchars(trim((string)($v ?? ''))); }
 
 $name = safe($data['name'] ?? '');
+
 $contactMethod = safe($data['contactMethod'] ?? '');
 $contactInfo = safe($data['contactInfo'] ?? '');
 $currentLife = nl2br(safe($data['currentLife'] ?? ''));
@@ -71,3 +77,4 @@ try {
     http_response_code(500);
     echo json_encode(['ok' => false, 'error' => $mail->ErrorInfo]);
 }
+
