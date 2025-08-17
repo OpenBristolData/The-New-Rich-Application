@@ -34,20 +34,56 @@ $challenge = nl2br(safe($data['challenge'] ?? ''));
 $freeTraining = safe($data['freeTraining'] ?? '');
 
 $html = "
-  <h3>New Application Submission</h3>
-  <table border='1' cellpadding='6' cellspacing='0' style='border-collapse:collapse;width:100%;max-width:700px;font-family:Arial'>
-    <tr><td><b>Name</b></td><td>$name</td></tr>
-    <tr><td><b>Contact Method</b></td><td>$contactMethod</td></tr>
-    <tr><td><b>Contact Info</b></td><td>$contactInfo</td></tr>
-    <tr><td><b>Current Life</b></td><td>$currentLife</td></tr>
-    <tr><td><b>Commitment</b></td><td>$commitment</td></tr>
-    <tr><td><b>Interested?</b></td><td>$interested</td></tr>
-    <tr><td><b>Tried Before</b></td><td>$triedBefore</td></tr>
-    <tr><td><b>Income Goal</b></td><td>$incomeGoal</td></tr>
-    <tr><td><b>Challenge</b></td><td>$challenge</td></tr>
-    <tr><td><b>Free Training?</b></td><td>$freeTraining</td></tr>
-  </table>
+<h3 style='font-family:Arial,sans-serif;color:#333;'>New Application Submission</h3>
+<table cellpadding='10' cellspacing='0' 
+       style='width:100%;max-width:700px;border-collapse:separate;border-spacing:0;border-radius:8px;overflow:hidden;font-family:Arial,sans-serif;background:#f9f9f9;color:#333;'>
+  <tr style='background:#6b1d3f;color:#fff;font-weight:bold;'>
+    <td style='padding:12px;'>Field</td>
+    <td style='padding:12px;'>Value</td>
+  </tr>
+  <tr style='background:#fff;'>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>Name</td>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>$name</td>
+  </tr>
+  <tr style='background:#f7f7f7;'>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>Contact Method</td>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>$contactMethod</td>
+  </tr>
+  <tr style='background:#fff;'>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>Contact Info</td>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>$contactInfo</td>
+  </tr>
+  <tr style='background:#f7f7f7;'>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>Current Life</td>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>$currentLife</td>
+  </tr>
+  <tr style='background:#fff;'>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>Commitment</td>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>$commitment</td>
+  </tr>
+  <tr style='background:#f7f7f7;'>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>Interested?</td>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>$interested</td>
+  </tr>
+  <tr style='background:#fff;'>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>Tried Before</td>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>$triedBefore</td>
+  </tr>
+  <tr style='background:#f7f7f7;'>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>Income Goal</td>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>$incomeGoal</td>
+  </tr>
+  <tr style='background:#fff;'>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>Challenge</td>
+    <td style='padding:12px;border-bottom:1px solid #ddd;'>$challenge</td>
+  </tr>
+  <tr style='background:#f7f7f7;'>
+    <td style='padding:12px;'>Free Training?</td>
+    <td style='padding:12px;'>$freeTraining</td>
+  </tr>
+</table>
 ";
+
 
 $mail = new PHPMailer(true);
 try {
@@ -59,7 +95,7 @@ try {
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
-    $mail->setFrom(getenv('GMAIL_USER'), 'Website Form');
+    $mail->setFrom(getenv('GMAIL_USER'), 'The New Rich Application');
     $mail->addAddress(getenv('MAIL_TO'));
 
     if (filter_var($contactInfo, FILTER_VALIDATE_EMAIL)) {
@@ -77,4 +113,5 @@ try {
     http_response_code(500);
     echo json_encode(['ok' => false, 'error' => $mail->ErrorInfo]);
 }
+
 
